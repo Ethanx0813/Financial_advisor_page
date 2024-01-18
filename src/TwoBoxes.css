@@ -1,0 +1,26 @@
+/* TwoBoxes.css */
+.two-boxes-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  .left-box,
+  .right-box {
+    background-color: #3498db; /* Stylish blue color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #fff; /* White text color */
+    max-width: 300px;
+  }
+  
+  .left-box h2,
+  .right-box h2 {
+    font-size: 1.5em; /* Adjust the font size as needed */
+    margin-bottom: 10px;
+  }
+  
+  /* Adjust styling as needed */
+  

@@ -1,0 +1,37 @@
+/* Efficient.css */
+.efficient-container {
+    background-color: #2ecc71; /* Stylish green color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #fff; /* White text color */
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  .efficient-container h2 {
+    font-size: 1.5em; /* Adjust the font size as needed */
+    margin-bottom: 20px;
+  }
+  
+  .points-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .points-list li {
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 1.2em;
+  }
+  
+  .points-list li::before {
+    content: '\2022'; /* Bullet point */
+    color: #fff; /* Match the text color */
+    font-size: 1.2em; /* Adjust the font size as needed */
+    position: absolute;
+    left: -1.5em;
+    top: 0.5em; /* Adjust the top value for vertical alignment */
+  }
+  

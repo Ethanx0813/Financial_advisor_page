@@ -1,0 +1,24 @@
+/* PositionsAndNames.css */
+.positions-and-names {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  .position {
+    text-align: center;
+  }
+  
+  .position h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #3498db; /* Stylish blue color */
+  }
+  
+  .position p {
+    margin: 5px 0;
+    color: #555; /* Dark gray text color */
+  }
+  
+  /* Adjust styling as needed */
+  

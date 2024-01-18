@@ -1,0 +1,32 @@
+/* InvestmentApproach.css */
+.approach-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .horizontal-paragraphs {
+    display: flex;
+    flex-direction: row; /* Ensure horizontal arrangement */
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .paragraph {
+    margin-left: 20px; /* Add margin to create space between symbols and paragraphs */
+  }
+  .symbol-paragraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .symbol {
+    font-size: 2em; /* Adjust the size of the symbol */
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    margin-bottom: 20px;
+  }
+  

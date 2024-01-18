@@ -1,0 +1,32 @@
+/* InfoBoxes.css */
+.info-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px; /* Adjust the margin as needed */
+  }
+  
+  .info-box {
+    background-color: #3498db;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #fff;
+    max-width: 200px;
+    margin-bottom: 20px; /* Adjust the margin between the boxes */
+  }
+  
+  .info-box h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .name-box {
+    text-align: center;
+    margin-bottom: 20px; /* Adjust the margin between the names and boxes */
+  }
+  
+  .name-box p {
+    margin: 0;
+  }
+  

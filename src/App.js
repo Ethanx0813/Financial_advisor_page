@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+// App.js
+import React from 'react';
+import Header from './Header';
+import Services from './Services';
 import './App.css';
+import InfoBoxes from './InfoBoxes';
+import PositionsWithNames from './PositionsWithNames';
+import TwoBoxes from './TwoBoxes';
+import Efficient from './Efficient.js';
+import InvestmentApproach from './InvestmentApproach.js';
+import UnlockPotential from './UnlockPotential.js';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Services />
+<InfoBoxes/>
+<PositionsWithNames/>
+<TwoBoxes/>
+<Efficient/>
+<InvestmentApproach/>
+<UnlockPotential/>
     </div>
   );
-}
+};
 
 export default App;
