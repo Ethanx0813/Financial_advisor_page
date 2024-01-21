@@ -1,150 +1,87 @@
 /* Services.css */
-.services-container {
-  flex: 1;
-  padding: 20px;
-  color: #fff;
-}
-
-.services-heading {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-}
-
-.services-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.services-list li {
-       font-size: 100px;
-  margin-top: 50px;
-  position: relative;
-  font-size: 1.2em; /* Increase the font size as needed */
-}
-
-.services-list li::before {
-  content: '\2022'; /* Use \2022 for a dark black circle or replace it with your preferred symbol */
-  color: #3498db; /* Match the box color */
-  font-size: em; /* Increase the font size for a bigger dot */
-  position: absolute;
-  left: -1.5em;
-  top: 1em; /* Adjust the top value for vertical alignment */
-}
-
-h2 {
-  font-size: 1.5em; /* Increase the font size for the heading */
-  margin-bottom: 20px;
-}
-
-body {
-  margin: 0; /* Remove default body margin */
-  padding: 0; /* Remove default body padding */
-  background: linear-gradient(to right, rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.5)); /* Dark blue to transparent blue gradient */
-}
 
 .services-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  background-color: #013220;
+  color: white;
 }
 
-.book-free-call-container {
-  max-width: 400px; /* Adjust the width as needed */
-  margin-right: 50px; /* Increase the margin on the right side */
+.left-section {
+  flex: 1;
+  padding: 20px;
 }
+
+.right-section {
+  flex: 1;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.animated-word {
+  color: yellow;
+}
+
+.message-boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Add this line to vertically center items */
+  margin-top: 20px;
+}
+
+.message-box {
+  margin-right: 20px; /* Optional: Add margin to separate the message boxes */
+  text-align: center; /* Optional: Center-align text within each message box */
+}
+
+/* ... Your existing styles ... */
 
 .book-free-call-form {
-  background-color: #3498db; /* Stylish blue color */
+  border: 2px solid white;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  color: #000;
+  border-radius: 10px;
 }
 
-.book-free-call-form h2 {
-  text-align: center;
-  color: #fff; /* White text color */
-  margin-bottom: 20px;
-}
-
-.form-field {
-  margin-bottom: 15px;
-}
-
-.book-free-call-form form {
+form {
   display: flex;
   flex-direction: column;
 }
 
-.book-free-call-form label {
-  margin-bottom: 10px;
-  color: #fff; /* White text color */
+.form-field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Updated to make labels and inputs stack vertically */
 }
 
-.book-free-call-form input,
-.book-free-call-form select {
+label {
+  margin-bottom: 5px;
+  color: #000;
+}
+
+input,
+select,
+textarea {
   padding: 10px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 4px;
-  box-sizing: border-box; /* Ensure padding and border are included in the width */
-  width: 100%; /* Set width to 100% for consistent sizing */
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-top: 5px;
 }
 
-/* Set a specific width for the Annual Income select */
-.book-free-call-form select {
-  width: 100%; /* Adjust the width as needed */
-  appearance: none;
-  background: url("data:image/svg+xml;utf8,<svg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>")
-    no-repeat right #fff; /* White background with custom arrow icon */
-  background-size: 16px;
-  padding-right: 30px; /* Space for the arrow icon */
-}
-
-.book-free-call-form button {
-  background-color: #2ecc71; /* Stylish green color */
-  color: #fff;
-  padding: 12px;
+button {
+  background-color: #013220;
+  color: white;
+  padding: 10px;
   cursor: pointer;
   border: none;
-  border-radius: 4px;
-}
-.box-container {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 30px; /* Adjust the margin as needed */
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
-/* Services.css */
-
-/* ... (previous styles) */
-
-.info-boxes {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 450px;
-  margin-left: 10px;
+button:hover {
+  background-color: #01241f;
 }
-
-.info-box {
-  background-color: #3498db;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: #fff;
-  max-width: 300px;
-  margin-right: 20px; /* Adjust the margin between the boxes */
-}
-
-.info-box h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-/* Adjust styles to make boxes side by side */
-.info-boxes .info-box {
-  flex: 1; /* Distribute available space evenly */
-}
-
-/* ... (other styles) */

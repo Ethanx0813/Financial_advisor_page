@@ -1,21 +1,44 @@
-// Services.js
-import React, { useState } from 'react';
-import './Services.css';
-
+import React, { useState, useEffect } from 'react';
+import './Services.css'; 
 
 const Services = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    annualIncome: '',
-  });
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const roles = ['Salaried,', 'A Businessperson,', 'Or a Freelancer'];
+
+  useEffect(() => {
+    const roleInterval = setInterval(() => {
+      setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+    }, 2000);
+
+    const messageInterval = setInterval(() => {
+      setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % mainMessage.length);
+    }, 150);
+
+    return () => {
+      clearInterval(roleInterval);
+      clearInterval(messageInterval);
+    };
+  }, []);
+
+  const renderCurrentRole = () => {
+    const currentRole = roles[currentRoleIndex];
+    const words = currentRole.split(' ');
+
+    return words.map((word, index) => (
+      <span key={index} className={`animated-word ${index === 0 ? 'highlight' : ''}`}>
+        {word}
+        {index < words.length - 1 && ' '}
+      </span>
+    ));
+  };
+
+  const mainMessage =
+    '90% of people who called agree that having someone to talk to about their financial plans has enhanced their financial journey.';
+
+  const renderCurrentMessage = () => {
+    return mainMessage.slice(0, currentMessageIndex);
   };
 
   const handleSubmit = (e) => {
@@ -24,84 +47,77 @@ const Services = () => {
     // TODO: Handle form submission logic (Firebase or any other method)
 
     // Clear the form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      annualIncome: '',
-    });
+    setCurrentRoleIndex(0);
+    setCurrentMessageIndex(0);
+  };
+
+  const handleChange = (e) => {
+    // Add your form field change logic here
+    // ...
   };
 
   return (
     <div className="services-container">
-      <h2>Services We Provide</h2>
-      <ul className="services-list">
-        <li>Providing investment solutions whether you are salaried, a businessperson, or a freelancer.</li>
-        <li>Every unique freelancing problem can be solved by using simple investment solutions.</li>
-        <li>90% of people who called agree that having someone to talk to about their financial plans has enhanced their financial journey.</li>
-      <li> Actionable strategies and simple financial products help you grow faster</li>
-      </ul>
-
-      <div className="book-free-call-container">
-        <div className="book-free-call-form">
-          <h2>REGISTER NOW - Take your free trial</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="form-field">
-              <label htmlFor="name">Name:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-field">
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-field">
-              <label htmlFor="phone">Phone:</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-field">
-              <label htmlFor="annualIncome">Annual Income:</label>
-              <select
-                id="annualIncome"
-                name="annualIncome"
-                value={formData.annualIncome}
-                onChange={handleChange}
-                required
-              >
-                <option value="" disabled>
-                  Select an option
-                </option>
-                <option value="100000-500000">100,000 - 500,000</option>
-                <option value="500000-1000000">500,000 - 1,000,000</option>
-                <option value="1000000-1500000">1,000,000 - 1,500,000</option>
-                <option value="1500000-2000000">1,500,000 - 2,000,000</option>
-              </select>
-            </div>
-            <button type="submit">Book a Free Call</button>
-          </form>
-          
+      <div className="left-section">
+        <h1 style={{ color: 'white', marginTop: 0, fontSize: '45px' }}>
+          Providing investment solutions whether you are
+        </h1>
+        <h2 className="animated-text">{renderCurrentRole()}</h2>
+        <div className="message-boxes">
+          <div className="message-box">
+            <p>24 Hours<br></br> Service Available</p>
+          </div>
+          <div className="message-box">
+            <p>92%<br></br> Satisfaction Rate</p>
+          </div>
         </div>
-       
+      </div>
+      <div className="right-section">
+        <div className="book-free-call-container">
+          <div className="book-free-call-form">
+            <h1>Book a Free call</h1>
+            <h3>{mainMessage}</h3>
+          
+
+<form onSubmit={handleSubmit}>
+  <div className="form-field">
+    <label htmlFor="name">Name:</label>
+    <input type="text" id="name" name="name" onChange={handleChange} required />
+  </div>
+
+  <div className="form-field">
+    <label htmlFor="email">Email:</label>
+    <input type="email" id="email" name="email" onChange={handleChange} required />
+  </div>
+
+  <div className="form-field">
+    <label htmlFor="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" onChange={handleChange} required />
+  </div>
+
+  <div className="form-field">
+    <label htmlFor="annualIncome">Annual Income:</label>
+    <select id="annualIncome" name="annualIncome" onChange={handleChange} required>
+      <option value="" disabled>
+        Select an option
+      </option>
+      <option value="100000-500000">100,000 - 500,000</option>
+      <option value="500000-1000000">500,000 - 1,000,000</option>
+      <option value="1000000-1500000">1,000,000 - 1,500,000</option>
+      <option value="1500000-2000000">1,500,000 - 2,000,000</option>
+    </select>
+  </div>
+
+  <div className="form-field">
+    <label htmlFor="message">Message:</label>
+    <textarea id="message" name="message" onChange={handleChange} required />
+  </div>
+
+  <button type="submit">Book a Free Call</button>
+</form>
+
+          </div>
+        </div>
       </div>
     </div>
   );
