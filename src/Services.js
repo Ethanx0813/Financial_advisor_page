@@ -1,5 +1,7 @@
+// Services.js
 import React, { useState, useEffect } from 'react';
 import './Services.css'; 
+import GreenLeafIcon from './GreenLeafIcon';
 
 const Services = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -14,7 +16,7 @@ const Services = () => {
 
     const messageInterval = setInterval(() => {
       setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % mainMessage.length);
-    }, 150);
+    }, 100);
 
     return () => {
       clearInterval(roleInterval);
@@ -64,11 +66,15 @@ const Services = () => {
         </h1>
         <h2 className="animated-text">{renderCurrentRole()}</h2>
         <div className="message-boxes">
+        
           <div className="message-box">
-            <p>24 Hours<br></br> Service Available</p>
+            <h4><GreenLeafIcon />24 Hours</h4>
+            <p style={{ marginLeft: '60px' }}>Response time</p>
+
           </div>
           <div className="message-box">
-            <p>92%<br></br> Satisfaction Rate</p>
+            <h4><GreenLeafIcon />92%</h4>
+            <p style={{ marginLeft: '60px' }}>Response time</p>
           </div>
         </div>
       </div>
@@ -76,46 +82,43 @@ const Services = () => {
         <div className="book-free-call-container">
           <div className="book-free-call-form">
             <h1>Book a Free call</h1>
-            <h3>{mainMessage}</h3>
-          
+            <h3>{renderCurrentMessage()}</h3>
+            <form onSubmit={handleSubmit}>
+              <div className="form-field">
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name" name="name" onChange={handleChange} required />
+              </div>
 
-<form onSubmit={handleSubmit}>
-  <div className="form-field">
-    <label htmlFor="name">Name:</label>
-    <input type="text" id="name" name="name" onChange={handleChange} required />
-  </div>
+              <div className="form-field">
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email" name="email" onChange={handleChange} required />
+              </div>
 
-  <div className="form-field">
-    <label htmlFor="email">Email:</label>
-    <input type="email" id="email" name="email" onChange={handleChange} required />
-  </div>
+              <div className="form-field">
+                <label htmlFor="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" onChange={handleChange} required />
+              </div>
 
-  <div className="form-field">
-    <label htmlFor="phone">Phone:</label>
-    <input type="tel" id="phone" name="phone" onChange={handleChange} required />
-  </div>
+              <div className="form-field">
+                <label htmlFor="annualIncome">Annual Income:</label>
+                <select id="annualIncome" name="annualIncome" onChange={handleChange} required>
+                  <option value="" disabled>
+                    Select an option
+                  </option>
+                  <option value="100000-500000">100,000 - 500,000</option>
+                  <option value="500000-1000000">500,000 - 1,000,000</option>
+                  <option value="1000000-1500000">1,000,000 - 1,500,000</option>
+                  <option value="1500000-2000000">1,500,000 - 2,000,000</option>
+                </select>
+              </div>
 
-  <div className="form-field">
-    <label htmlFor="annualIncome">Annual Income:</label>
-    <select id="annualIncome" name="annualIncome" onChange={handleChange} required>
-      <option value="" disabled>
-        Select an option
-      </option>
-      <option value="100000-500000">100,000 - 500,000</option>
-      <option value="500000-1000000">500,000 - 1,000,000</option>
-      <option value="1000000-1500000">1,000,000 - 1,500,000</option>
-      <option value="1500000-2000000">1,500,000 - 2,000,000</option>
-    </select>
-  </div>
+              <div className="form-field">
+                <label htmlFor="message">Message:</label>
+                <textarea id="message" name="message" onChange={handleChange} required />
+              </div>
 
-  <div className="form-field">
-    <label htmlFor="message">Message:</label>
-    <textarea id="message" name="message" onChange={handleChange} required />
-  </div>
-
-  <button type="submit">Book a Free Call</button>
-</form>
-
+              <button type="submit">Book a Free Call</button>
+            </form>
           </div>
         </div>
       </div>

@@ -1,0 +1,28 @@
+/* Advise.css */
+
+.advise-container {
+    display: flex;
+  }
+  
+  .advise-section {
+    flex-grow: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+  }
+  
+  .advise-section-parent {
+    display: flex; /* Add this to display the sections horizontally */
+    flex-grow: 1;
+  }
+  
+  .nav-title {
+    font-size: 1.5em;
+    margin-bottom: -5px;
+    color:black; /* or any other color you prefer */
+  }
+  
+  .nav-text {
+    color: #51596C; /* or any other color you prefer */
+  }
+  

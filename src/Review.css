@@ -1,32 +1,17 @@
 /* Review.css */
 
-/* index.css or App.css */
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #013220; /* Set the entire background to dark green */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.reviews-container {
+  display: flex;
+  flex-direction: row; /* Align reviews horizontally */
+  justify-content: space-around; /* Add space around reviews */
 }
 
-#root {
+.review {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-
-.review-container {
-  display: flex;
-  flex-direction: column; /* Align stars and messages vertically */
-  align-items: center;
-  justify-content: center;
   margin-bottom: 20px;
-  background-color: #013220; /* Dark green background */
+  background-color: #11644f; /* Dark green background */
   padding: 20px;
   border-radius: 10px;
 }
@@ -41,10 +26,4 @@ body {
   color: white; /* White text color for message */
   text-align: center;
   margin-top: 10px; /* Add margin between stars and message */
-}
-
-.reviews-container {
-  display: flex;
-  flex-direction: row; /* Align reviews horizontally */
-  justify-content: space-around; /* Add space around reviews */
 }
