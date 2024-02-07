@@ -2,8 +2,11 @@
 import React from 'react';
 import './Review.css';
 
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 const Review = () => {
+  
   return (
+    <div style={{backgroundColor: '#11644f'}}>
     <div className="reviews-container">
       <div className="review">
         <div className="stars">⭐⭐⭐⭐⭐</div>
@@ -17,6 +20,7 @@ const Review = () => {
         <div className="stars">⭐⭐⭐⭐⭐</div>
         <div className="message">There one theme is everything that user wants.</div>
       </div>
+    </div>
     </div>
   );
 };

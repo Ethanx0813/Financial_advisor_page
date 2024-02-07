@@ -11,10 +11,15 @@
   padding: 20px;
 }
 
+/* Services.css */
+
 .right-section {
   flex: 1;
-  padding: 20px;
+  padding: 20px; /* You can reduce the padding */
+  max-width: 400px; /* Add max-width to limit the width */
+  margin-right: 60px;
 }
+
 
 h1 {
   font-size: 24px;
@@ -84,4 +89,16 @@ button {
 
 button:hover {
   background-color: #01241f;
+}
+
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.card-text {
+  font-size: 18px;
+  
 }

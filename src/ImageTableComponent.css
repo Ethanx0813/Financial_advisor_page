@@ -1,0 +1,67 @@
+/* Assuming you're using Bootstrap classes */
+.w-lg-65 {
+    width: 65%;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mx-lg-auto {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .mb-7 {
+    margin-bottom: 4.5rem; /* Adjust as needed */
+  }
+  
+  .fs-6 {
+    font-size: 1.125rem; /* Adjust as needed */
+  }
+  
+  .mb-5 {
+    margin-bottom: 3rem; /* Adjust as needed */
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table-text-end {
+    text-align: right;
+  }
+  .col-sm-divider {
+    display: flex;
+  }
+  
+  .col-sm-divider > div {
+    border-right: 2px solid #ddd; /* Increase width of vertical divider */
+  }
+  
+  .col-sm-divider > div:last-child {
+    border-right: none; /* Remove divider from last column */
+  }
+  
+  .container-margin {
+    margin-left: 250px; /* Adjust the value as needed */
+  }
+  
