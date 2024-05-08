@@ -34,3 +34,22 @@ ul {
 .list-checked-item {
   margin-bottom: 10px; /* Adjust the value to increase or decrease the vertical distance */
 }
+.orange-button {
+  background-color: #a25826;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 50%; /* Make the button take the whole width */
+  margin-top: 20px; /* Add margin to separate from other content */
+}
+.image-container {
+  flex: 0 0 auto;
+  margin-right: 20px; /* Adjust spacing between image and content */
+}
+
+.content-container {
+  flex: 1;
+}

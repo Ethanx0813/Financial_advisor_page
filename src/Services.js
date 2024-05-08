@@ -10,7 +10,8 @@ const Services = () => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [annualIncome, setAnnualIncome] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [loader, setLoader] = useState(false);
 
   const roles = ['Salaried,', 'A Businessperson,', 'Or a Freelancer'];
@@ -41,14 +42,16 @@ const Services = () => {
       await db.collection("contacts").add({
         name: name,
         email: email,
-        annualIncome: annualIncome,
+        date: date,
+        time: time
       });
       setLoader(false);
       alert("Your message has been submitted👍");
       // Clear the form
       setName("");
       setEmail("");
-      setAnnualIncome("");
+      setDate("");
+      setTime("");
     } catch (error) {
       alert(error.message);
       setLoader(false);
@@ -59,7 +62,14 @@ const Services = () => {
     const { name, value } = e.target;
     if (name === 'name') setName(value);
     else if (name === 'email') setEmail(value);
-    else if (name === 'annualIncome') setAnnualIncome(value);
+  };
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  };
+
+  const handleTimeChange = (e) => {
+    setTime(e.target.value);
   };
 
   const renderCurrentRole = () => {
@@ -100,8 +110,8 @@ const Services = () => {
       <div className="right-section">
         <div className="book-free-call-container">
           <div className="book-free-call-form">
-            <h5 className='card-title'>Book a Free call</h5>
-            <p className="card-text">90% of people who called agree that having<br></br> someone to talk to about their financial plans<br></br> has enhanced their financial journey</p>
+            <h5 className='card-title'>Don't know where to start?</h5>
+            <p className="card-text">Most of us know starting investing early is the smart thing to do, but we don't know how to start the research, how much amount to put in and how to divide your investments in different investment sectors. The longer you wait, more the loss. Book a free call.</p>
             <form onSubmit={handleSubmit}>
               <div className="form-field">
                 <label htmlFor="name">Name:</label>
@@ -112,16 +122,12 @@ const Services = () => {
                 <input type="email" id="email" name="email" value={email} onChange={handleChange} required />
               </div>
               <div className="form-field">
-                <label htmlFor="annualIncome">Annual Income:</label>
-                <select id="annualIncome" name="annualIncome" value={annualIncome} onChange={handleChange} required>
-                  <option value="" disabled>
-                    Select an option
-                  </option>
-                  <option value="100000-500000">100,000 - 500,000</option>
-                  <option value="500000-1000000">500,000 - 1,000,000</option>
-                  <option value="1000000-1500000">1,000,000 - 1,500,000</option>
-                  <option value="1500000-2000000">1,500,000 - 2,000,000</option>
-                </select>
+                <label htmlFor="date">Date:</label>
+                <input type="date" id="date" name="date" value={date} onChange={handleDateChange} required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="time">Time:</label>
+                <input type="time" id="time" name="time" value={time} onChange={handleTimeChange} required />
               </div>
               <button type="submit" style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}>Book a Free Call</button>
             </form>

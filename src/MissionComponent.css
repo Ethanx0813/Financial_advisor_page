@@ -1,0 +1,54 @@
+/* MissionComponent.css */
+
+.mission-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.mission-left {
+    flex: 1;
+    max-width: 50%;
+}
+
+.mission-content {
+    max-width: 400px;
+}
+
+.mission-paragraph {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.mission-heading {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.mission-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.image-container {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.white-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.white-box {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}

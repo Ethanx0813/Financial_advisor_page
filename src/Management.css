@@ -1,46 +1,44 @@
 /* Management.css */
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .row {
-    display: flex;
-    flex-basis: 100%;
-  }
-  
-  .col-sm-6 {
-    flex: 0 0 50%; /* For small screens, each item takes 50% width */
-  }
-  
-  .col-lg-4 {
-    flex: 0 0 33.33%; /* For large screens, each item takes 33.33% width */
-  }
-  
-  .mb-5 {
-    margin-bottom: 1.25rem; /* Adjust this value as needed for vertical spacing between items */
-  }
-  
-  .mb-lg-0 {
-    margin-bottom: 0; /* Remove bottom margin for large screens */
-  }
-  
-  .text-primary {
-    color: #035A4B; /* Primary text color */
-  }
-  
-  h6 {
-    font-size: 1.25rem; /* Adjust heading font size as needed */
-    margin-bottom: 0.5rem; /* Adjust margin bottom as needed */
-  }
-  
-  p {
-    margin-bottom: 0.5rem; /* Adjust margin bottom as needed */
-  }
-  .mt-5 {
-    margin-top: 5rem; /* Adjust the value as needed */
-  }
-  
-  /* Add additional CSS styles as needed */
-  
+.management-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  margin-bottom: 50px; /* Add margin at the bottom to prevent overlap with other components */
+}
+
+.management-left {
+  flex: 1;
+}
+
+.management-content {
+  max-width: 900px; /* Adjust width as needed */
+}
+
+.management-paragraph {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.management-heading {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.management-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.management-right .image-container {
+  max-width: 400px; /* Adjust width as needed */
+  max-height: 400px; /* Adjust height as needed */
+}
+
+.financial-image {
+  max-width: 100%; /* Ensure image does not exceed container width */
+  max-height: 100%;
+  object-fit: cover; /* Ensure image does not exceed container height */
+}

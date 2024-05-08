@@ -1,0 +1,24 @@
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+    background-color: #050721; /* Dark blue background */
+    color: white; /* White text color */
+    
+      padding-left: 20px; /* Add left padding */
+      padding-right: 20px; /* Add right padding */
+    
+    
+  }
+  
+  .step-item {
+    flex-basis: 30%; /* Adjust this value based on your layout */
+  }
+  
+  /* Additional styling for the headings */
+  .step-item h2 {
+    font-size: 24px; /* Larger font size for headings */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add padding for better spacing */
+  }
+  

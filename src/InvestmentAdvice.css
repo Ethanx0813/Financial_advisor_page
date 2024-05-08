@@ -1,0 +1,37 @@
+/* InvestmentAdvice.css */
+
+.advice-container {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin-top: 0px;
+    background-color: #050521; /* Dark blue background */
+    color: white; /* White text color */
+    padding: 20px; /* Add padding as needed */
+  }
+  
+  .advice-container h2 {
+    font-size: 24px; /* Larger font size for headings */
+    margin-bottom: 20px; /* Bottom margin for spacing */
+    text-align: center; /* Center align the text */
+  }
+  
+  .advice-container ul {
+    padding-left: 0; /* Remove default padding */
+  }
+  
+  .advice-container li {
+    font-size: 18px; /* Font size for list items */
+    margin-bottom: 10px; /* Bottom margin for spacing */
+    text-align: center; /* Center align the text */
+  }
+  
+  .advice-container li:before {
+    content: '•'; /* Bullet symbol */
+    color: #007bff; /* Blue color */
+    display: inline-block;
+    width: 1em;
+    margin-right: 0.5em; /* Adjust the margin */
+  }
+  

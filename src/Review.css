@@ -1,29 +1,34 @@
-/* Review.css */
-
 .reviews-container {
   display: flex;
-  flex-direction: row; /* Align reviews horizontally */
-  justify-content: space-around; /* Add space around reviews */
+  justify-content: space-between;
+  gap: 20px; /* Add a small gap between the review boxes */
+  padding: 0 20px; /* Add padding to the sides */
 }
 
 .review {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: #11644f; /* Dark green background */
+  flex: 1;
+  width: 200px; /* Decrease the width of the review boxes */
+  height: 250px; /* Increase the height of the review boxes */
+  border: 1px solid #ccc;
+  border-radius: 20px;
   padding: 20px;
-  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color:wheat;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.review:hover {
+  transform: translateY(-12px);
 }
 
 .stars {
-  font-size: 24px;
-  color: white; /* White text color for stars */
+  font-size: 20px;
+  color: gold;
 }
 
 .message {
   font-size: 16px;
-  color: white; /* White text color for message */
-  text-align: center;
-  margin-top: 10px; /* Add margin between stars and message */
+  margin-top: 10px;
 }

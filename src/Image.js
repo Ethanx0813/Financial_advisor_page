@@ -1,24 +1,40 @@
+// Image.js
+
 import React from 'react';
 import financial from './Images/financial.jpg';
 import './Image.css'; // Import CSS file
 
 const Image = () => {
+  const scrollToServices = () => {
+    const servicesButton = document.getElementById('services-button');
+    if (servicesButton) {
+      const buttonPosition = servicesButton.getBoundingClientRect().top;
+      window.scrollTo({ top: buttonPosition, behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="container">
       <div className="image-container">
         <img src={financial} alt="Financial Image" style={{ maxWidth: '600px', maxHeight: '600px' }} />
       </div>
       <div className="content-container">
-      <span style={{ marginTop: 0 }} className="text-cap">Create an Efficiant Financial Plan</span>
-        <h2>Less Confusion, more Compounding</h2>
-        <p>Start with award-winning templates, then customize to fit your style and professional needs.</p>
+        <span style={{ marginTop: 0 }} className="text-cap">Create an Efficient Financial Plan</span>
+        <h2>Getting started is easy...</h2>
         <ul>
-        <li className="list-checked-item">Choose investment that make sense for you</li>
-      <li className="list-checked-item">Set up your finances so that they not only grow exponentially , but are also safe</li>
-      <li className="list-checked-item">Understand How much you need to invest so that you can balance between today's expenses and future savings</li>
-      <li className="list-checked-item">Online E-commerce</li>
-      <li className="list-checked-item">Make more informed fincanical decisions as we explore all options with you  </li>
+          <li className="list-checked-item">1. Figure out a plan that works for you.
+            Click on the book a free call button below to understand your relation with money and outline a financial plan that makes sense for you.
+          </li>
+          <li className="list-checked-item">2. Use the plan and take action.
+            Follow the plan closely and realize the vision.
+          </li>
+          <li className="list-checked-item">3. Take control.
+            Understand how money can work in your favor, and take control of your finances.
+          </li>
         </ul>
+        <button id="services-button" className="orange-button" onClick={scrollToServices}>
+          Learn Your Secret Power
+        </button>
       </div>
     </div>
   );
