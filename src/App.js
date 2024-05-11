@@ -15,6 +15,7 @@ import InvestmentAdvice from './InvestmentAdvice';
 //import MissionComponent from './MissionComponent';
 import Review from './Review';
 import AboutComponent from './AboutComponent';
+import UnstoppableComponent from './UnstoppableComponent';
 
 const App = () => {
   return (
@@ -24,12 +25,13 @@ const App = () => {
       <StepsComponent />
       {/* <Advise/> */}
       <InvestmentAdvice/>
+      <UnstoppableComponent/>
       <Image />
       {/* <MissionComponent/> */}
       <Management/>
       <Review/>
       <AboutComponent/>
-      <ImageTableComponent/> 
+      {/* <ImageTableComponent/>  */}
       <Footer/>
     </div>
   );

@@ -1,0 +1,102 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 20px;
+  background-color: rgb(4, 4, 18);
+  width: 100%;
+}
+
+.heading {
+  background-color: rgb(8, 8, 43);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 2.5em;
+}
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.snip1113 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.snip1113 * {
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.snip1113 img {
+  max-width: 100%;
+  height: auto;
+  margin: 40px auto;
+  display: block;
+  position: relative;
+  border: 3px solid #666666;
+  padding: 15px 15px 85px 15px;
+  transform: translate(0, 0);
+}
+
+.snip1113 figcaption {
+  position: absolute;
+  height: 120px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+}
+
+.snip1113 h3,.snip1113 h4 {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1.7em;
+  width: 100%;
+  padding: 5px 12px;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.snip1113 h3 span,.snip1113 h4 span {
+  font-weight: 800;
+}
+
+.snip1113.blue img {
+  border-color: #2472a4;
+}
+
+.snip1113.blue h3,.snip1113.blue h4 {
+  color: #2472a4;
+}
+
+.snip1113.red img {
+  border-color: #ab3326;
+}
+
+.snip1113.red h3,.snip1113.red h4 {
+  color: #ab3326;
+}
+
+.snip1113:hover {
+  transform: scale(1.05);
+}
