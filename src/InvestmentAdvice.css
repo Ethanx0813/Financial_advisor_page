@@ -28,10 +28,22 @@
   }
   
   .advice-container li:before {
-    content: '•'; /* Bullet symbol */
-    color: #007bff; /* Blue color */
+     /* Bullet symbol */
+    color: #01070e; /* Blue color */
     display: inline-block;
     width: 1em;
     margin-right: 0.5em; /* Adjust the margin */
   }
+  .advice-container ul {
+    padding-left: 0; /* Remove default padding */
+    list-style-type: none; /* Remove default list style */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+  }
   
+  .advice-container ul p {
+    font-size: 20px; /* Increase the font size */
+    margin: 10px 0; /* Add margin for spacing */
+    text-align: center; /* Center-align the text */
+  }

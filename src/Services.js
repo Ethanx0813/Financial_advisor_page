@@ -46,7 +46,7 @@ const Services = () => {
         time: time
       });
       setLoader(false);
-      alert("Your message has been submitted👍");
+      alert("Your form has been submitted");
       // Clear the form
       setName("");
       setEmail("");
@@ -91,10 +91,11 @@ const Services = () => {
   return (
     <div className="services-container">
       <div className="left-section">
-        <h1 style={{ color: 'white', marginTop: 0, fontSize: '45px' }}>
-          Providing investment solutions whether you are
-        </h1>
-        <h2 className="animated-text">{renderCurrentRole()}</h2>
+      <h1 style={{ color: 'white', marginTop: 0, fontSize: '30px',padding:'10px',marginLeft:'10px' }}>
+  Providing investment solutions whether<br></br> you are{' '}
+  <span className="animated-text">{renderCurrentRole()}</span>
+</h1>
+       
         <p style={{fontSize: '25px'}}>Every unique financial problem can be solved by using simple investment solution.</p>
         <div className="message-boxes">
           <div className="message-box">

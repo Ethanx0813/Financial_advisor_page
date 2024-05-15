@@ -2,7 +2,7 @@
 
 .services-container {
   display: flex;
-  background-color: #11644f;
+  background-color: #050521;
   color: white;
 }
 
@@ -11,13 +11,13 @@
   padding: 20px;
 }
 
-/* Services.css */
 
+/* Services.css */
 .right-section {
   flex: 1;
   padding: 20px; /* You can reduce the padding */
-  max-width: 400px; /* Add max-width to limit the width */
-  margin-right: 60px;
+  max-width: 500px; /* Add max-width to limit the width */
+  margin-right: 20px;
 }
 
 
@@ -50,6 +50,8 @@ h1 {
   background-color: white;
   color: #000;
   border-radius: 10px;
+
+  margin: auto;
 }
 
 form {
@@ -93,12 +95,18 @@ button:hover {
 
 
 .card-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: black;
+  margin-bottom: 10px; /* Add margin-bottom to adjust the gap */
+  margin-top: 5px;
 }
 
 .card-text {
-  font-size: 18px;
-  
+  font-size: 15px;
+  margin-top: 0; /* Remove the default top margin */
+}
+
+.right-section {
+  width: 100%; /* Adjust the width as per your requirement */
 }

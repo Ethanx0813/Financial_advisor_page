@@ -9,9 +9,9 @@ const InvestmentAdvice = () => {
     <div className="advice-container">
       <h2>Most people waste their time experimenting with different investment ideas and plans. When you use investment plans that are incorrect for you...</h2>
       <ul>
-        <li>You lose the money that you could have saved AND you lose compound interest on it</li>
-        <li>You blindly spend and blindly save, not truly understanding how to use your money purposefully</li>
-        <li>You trade financial clarity for uncertainty</li>
+        <p>. You lose the money that you could have saved AND you lose compound interest on it</p>
+        <p>. You blindly spend and blindly save, not truly understanding how to use your money purposefully</p>
+        <p>.You trade financial clarity for uncertainty</p>
       </ul>
     </div>
     

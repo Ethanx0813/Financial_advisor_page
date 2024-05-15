@@ -1,5 +1,5 @@
 body {
-  background-color: #0a192f; /* Dark blue background */
+  background-color: #050521; /* Dark blue background */
   color: white; /* Default text color */
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 .orange-button {
-  background-color: #a25826;
+  background-color: orangered;
   color: white;
   border: none;
   border-radius: 5px;
