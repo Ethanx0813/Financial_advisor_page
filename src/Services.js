@@ -130,7 +130,8 @@ const Services = () => {
                 <label htmlFor="time">Time:</label>
                 <input type="time" id="time" name="time" value={time} onChange={handleTimeChange} required />
               </div>
-              <button type="submit" style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}>Book a Free Call</button>
+              <button type="submit" style={{ background: loader ? "#ccc" : "orangered" }}>Book a Free Call</button>
+
             </form>
           </div>
         </div>

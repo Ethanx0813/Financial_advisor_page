@@ -2,7 +2,7 @@
 
 import React from 'react';
 import './Management.css';
-import financial from './Images/financial.jpg'; // Import the financial image
+import img6 from './Images/img6.jpeg'; // Import the financial image
 
 const Management = () => {
   return (
@@ -19,7 +19,7 @@ const Management = () => {
       </div>
       <div className="management-right">
         <div className="image-container">
-          <img src={financial} alt="Financial Image" className="financial-image" /> {/* Added class name for styling */}
+          <img src={img6} alt="Financial Image" className="financial-image" /> {/* Added class name for styling */}
         </div>
       </div>
     </div>
