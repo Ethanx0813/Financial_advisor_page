@@ -1,6 +1,7 @@
 body {
   background-color: #050521; /* Dark blue background */
   color: white; /* Default text color */
+  border-bottom: 1px solid #ccc;
 }
 
 .container {
@@ -8,16 +9,21 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 20px; /* Add padding to center content vertically */
+  background-color: #050521; /* Apply dark blue background to the entire component */
 }
 
 .image-and-content-container {
   display: flex;
+  background-color: #050521; /* Ensure this container also has the background color */
 }
 
 .image-container {
+  background-color: #050521;
   margin-top: -20px;
   flex: 0 0 auto;
   margin-right: 20px; /* Adjust spacing between image and content */
+  max-width: 500px; /* Set maximum width for the image */
+  overflow: hidden; /* Ensure the image doesn't overflow its container */
 }
 
 .content-container {

@@ -1,7 +1,7 @@
 // Image.js
 
 import React from 'react';
-import img5 from './Images/img5.jpeg';
+import imag4 from './Images/imag4.jpeg';
 import './Image.css'; // Import CSS file
 
 const Image = () => {
@@ -19,7 +19,7 @@ const Image = () => {
 
       <div className="image-and-content-container">
         <div className="image-container">
-          <img src={img5} alt="Financial Image" style={{ maxWidth: '800px', maxHeight: '600px' }} />
+          <img src={imag4} alt="Financial Image" style={{ maxWidth: '600px', maxHeight: '800px',  }} />
         </div>
         <div className="content-container">
           <h2 className="sky-color">1 Figure out a plan that works for you</h2>

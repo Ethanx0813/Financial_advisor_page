@@ -9,6 +9,7 @@
     background-color: #050521; /* Dark blue background */
     color: white; /* White text color */
     padding: 20px; /* Add padding as needed */
+    border-bottom: 2px solid #ccc;
   }
   
   .advice-container h2 {

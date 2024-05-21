@@ -7,16 +7,17 @@
 
 .review {
   flex: 1;
-  width: 200px; /* Decrease the width of the review boxes */
-  height: 250px; /* Increase the height of the review boxes */
+  width: 300px; /* Adjust width for better readability */
+  height: 300px; /* Adjust height */
   border: 1px solid #ccc;
   border-radius: 20px;
   padding: 20px;
   margin-bottom: 20px;
-  background-color:rgb(237, 232, 220);
+  background-color: #ededdc; /* Adjust background color */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
   transition: transform 0.3s ease-in-out;
+  
 }
 
 .review:hover {
@@ -24,7 +25,7 @@
 }
 
 .stars {
-  font-size: 20px;
+  font-size: 24px; /* Increase font size */
   color: gold;
 }
 
@@ -32,4 +33,12 @@
   font-size: 16px;
   margin-top: 10px;
   color: black;
+  line-height: 1.5; /* Add line height for better readability */
+}
+
+.name {
+  font-weight: bold; /* Make the name bold */
+  color: #111; /* Dark black color */
+  margin-top: 100px; /* Add margin between message and name */
+  text-align: right;
 }
