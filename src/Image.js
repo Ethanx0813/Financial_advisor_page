@@ -36,7 +36,7 @@ const Image = () => {
           </p>
           <div className="button-container">
             <button id="services-button" className="orange-button" onClick={scrollToServices}>
-              Book a free
+              Book a free call
             </button>
           </div>
         </div>

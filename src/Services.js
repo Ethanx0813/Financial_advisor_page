@@ -3,10 +3,11 @@ import './Services.css';
 import GreenLeafIcon from './GreenLeafIcon';
 import GreenLeafIcon2 from './GreenLeafIcon2';
 import { db } from './firebase'; // Adjust the path based on the actual location of firebase.js
-// Assuming you have Firebase setup in firebase.js
 
 const Services = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [currentRoleCharIndex, setCurrentRoleCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,48 +16,84 @@ const Services = () => {
   const [loader, setLoader] = useState(false);
 
   const roles = ['Salaried,', 'A Businessperson,', 'Or a Freelancer'];
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const holdDuration = 2000;
 
   useEffect(() => {
-    const roleInterval = setInterval(() => {
-      setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
-    }, 2000);
+    if (isDeleting) {
+      if (currentRoleCharIndex > 0) {
+        setTimeout(() => {
+          setCurrentRoleCharIndex(currentRoleCharIndex - 1);
+        }, deletingSpeed);
+      } else {
+        setIsDeleting(false);
+        setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+        setCurrentRoleCharIndex(0);
+      }
+    } else {
+      if (currentRoleCharIndex < roles[currentRoleIndex].length) {
+        setTimeout(() => {
+          setCurrentRoleCharIndex(currentRoleCharIndex + 1);
+        }, typingSpeed);
+      } else {
+        setTimeout(() => {
+          setIsDeleting(true);
+        }, holdDuration);
+      }
+    }
+  }, [currentRoleCharIndex, isDeleting]);
 
+  useEffect(() => {
     const messageInterval = setInterval(() => {
-      setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % mainMessage.length);
+      setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % (mainMessage.length + 1));
     }, 100);
 
     return () => {
-      clearInterval(roleInterval);
       clearInterval(messageInterval);
     };
   }, []);
 
   const mainMessage =
     '90% of people who called agree that having someone to talk to about their financial plans has enhanced their financial journey.';
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoader(true);
-
-    try {
-      await db.collection("contacts").add({
-        name: name,
-        email: email,
-        date: date,
-        time: time
-      });
-      setLoader(false);
-      alert("Your form has been submitted");
-      // Clear the form
-      setName("");
-      setEmail("");
-      setDate("");
-      setTime("");
-    } catch (error) {
-      alert(error.message);
-      setLoader(false);
-    }
-  };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setLoader(true);
+    
+      try {
+        // Check if the selected date and time are available
+        const bookingsSnapshot = await db.collection("contacts")
+          .where("date", "==", date)
+          .where("time", "==", time)
+          .get();
+    
+        if (!bookingsSnapshot.empty) {
+          // Display message indicating that the selected time slot is already booked
+          alert("Sorry, the selected time slot is already booked. Please choose another time.");
+          setLoader(false);
+          return;
+        }
+    
+        // If the selected time slot is available, proceed with booking the call
+        await db.collection("contacts").add({
+          name: name,
+          email: email,
+          date: date,
+          time: time
+        });
+        setLoader(false);
+        alert("Your form has been submitted");
+        // Clear the form
+        setName("");
+        setEmail("");
+        setDate("");
+        setTime("");
+      } catch (error) {
+        alert(error.message);
+        setLoader(false);
+      }
+    };
+    
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -74,14 +111,7 @@ const Services = () => {
 
   const renderCurrentRole = () => {
     const currentRole = roles[currentRoleIndex];
-    const words = currentRole.split(' ');
-
-    return words.map((word, index) => (
-      <span key={index} className={`animated-word ${index === 0 ? 'highlight' : ''}`}>
-        {word}
-        {index < words.length - 1 && ' '}
-      </span>
-    ));
+    return currentRole.slice(0, currentRoleCharIndex);
   };
 
   const renderCurrentMessage = () => {
@@ -91,12 +121,11 @@ const Services = () => {
   return (
     <div className="services-container">
       <div className="left-section">
-      <h1 style={{ color: 'white', marginTop: 0, fontSize: '30px',padding:'10px',marginLeft:'10px' }}>
-  Providing investment solutions whether<br></br> you are{' '}
-  <span className="animated-text">{renderCurrentRole()}</span>
-</h1>
-       
-        <p style={{fontSize: '25px'}}>Every unique financial problem can be solved by using simple investment solution.</p>
+        <h1 style={{ color: 'white', marginTop: 0, fontSize: '30px', padding: '10px', marginLeft: '10px' }}>
+          Providing investment solutions whether<br></br> you are{' '}
+          <span className="animated-text yellow">{renderCurrentRole()}</span>
+        </h1>
+        <p style={{ fontSize: '20px' }}>Every unique financial problem can be solved by using simple investment solution.</p>
         <div className="message-boxes">
           <div className="message-box">
             <h4><GreenLeafIcon />24 Hours</h4>
@@ -131,7 +160,6 @@ const Services = () => {
                 <input type="time" id="time" name="time" value={time} onChange={handleTimeChange} required />
               </div>
               <button type="submit" style={{ background: loader ? "#ccc" : "orangered" }}>Book a Free Call</button>
-
             </form>
           </div>
         </div>

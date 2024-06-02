@@ -111,3 +111,6 @@ button:hover {
 .right-section {
   width: 100%; /* Adjust the width as per your requirement */
 }
+.yellow {
+  color: yellow;
+}

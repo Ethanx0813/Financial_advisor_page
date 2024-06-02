@@ -2,29 +2,32 @@
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 20px;
-  background-color :#050521;
+  justify-content: center;
+  padding: 10px;
+  background-color: #050521;
   width: 100%;
+  border-bottom: 2px solid #ccc;
 }
 
 .heading {
-  background-color: #050521;
   color: white;
   text-align: center;
-  padding: 20px;
-  font-size: 2.5em;
+  padding: 10px;
+  font-size: 2em;
+  font-family: 'Raleway', Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .images-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
+  gap: 50px; /* Increased from 10px to 20px */
+  padding: 10px;
   width: 100%;
 }
 
@@ -32,13 +35,15 @@
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
   overflow: hidden;
-  margin: 10px;
-  min-width: 220px;
-  max-width: 310px;
+  margin: 5px;
+  min-width: 180px;
+  max-width: 250px;
   width: 100%;
   background: #ffffff;
   text-align: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
 .snip1113 * {
@@ -49,35 +54,46 @@
 .snip1113 img {
   max-width: 100%;
   height: auto;
-  margin: 40px auto;
+  margin: 20px auto;
   display: block;
   position: relative;
-  border: 3px solid #666666;
-  padding: 15px 15px 85px 15px;
+  border: 2px solid #666666;
+  padding: 10px 10px 50px 10px;
   transform: translate(0, 0);
+  border-radius: 5px;
 }
 
 .snip1113 figcaption {
   position: absolute;
-  height: 120px;
+  height: 80px;
   bottom: 0;
   left: 0;
   right: 0;
   display: block;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.snip1113 h3,.snip1113 h4 {
-  background-color: #ffffff;
-  color: #000000;
-  font-size: 1.7em;
+.snip1113:hover figcaption {
+  opacity: 1;
+}
+
+.snip1113 h3, .snip1113 h4 {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 1.2em;
   width: 100%;
-  padding: 5px 12px;
+  padding: 5px;
   margin: 0;
   text-transform: uppercase;
   font-weight: 400;
 }
 
-.snip1113 h3 span,.snip1113 h4 span {
+.snip1113 h3 span, .snip1113 h4 span {
   font-weight: 800;
 }
 
@@ -85,7 +101,7 @@
   border-color: #2472a4;
 }
 
-.snip1113.blue h3,.snip1113.blue h4 {
+.snip1113.blue h3, .snip1113.blue h4 {
   color: #2472a4;
 }
 
@@ -93,7 +109,7 @@
   border-color: #ab3326;
 }
 
-.snip1113.red h3,.snip1113.red h4 {
+.snip1113.red h3, .snip1113.red h4 {
   color: #ab3326;
 }
 
