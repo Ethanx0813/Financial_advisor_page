@@ -7,7 +7,7 @@ import imag3 from './Images/imag3.jpg';
 const UnstoppableComponent = () => {
   return (
     <div className="container">
-      <h1 className="heading">Become Unstoppable</h1>
+      <h1 className="heading">Take Control of Your Money</h1>
       <div className="images-container">
         <figure className="snip1113 red">
           <img src={imag2} alt="Financial Image" />

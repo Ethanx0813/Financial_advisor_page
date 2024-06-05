@@ -13,6 +13,17 @@
   align-items: center;
 }
 
+.header-left {
+  display: flex;
+  align-items: center; /* Vertically align items */
+}
+
+.header-logo {
+  width: 80px; /* Adjusted size */
+  height: auto; /* Maintains aspect ratio */
+  margin-right: 10px; /* Adds some space between the logo and the text */
+}
+
 .header-title {
   margin: 0;
   font-size: 24px;

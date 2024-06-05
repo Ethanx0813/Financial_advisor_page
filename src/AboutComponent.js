@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutComponent.css';
-import financial from './Images/financial.jpg';
+import financial_ from './Images/financial_.jpeg';
 
 const AboutComponent = () => {
   return (
@@ -13,7 +13,7 @@ const AboutComponent = () => {
       </div>
       <div className="about-right">
         <div className="about-image-container">
-          <img src={financial} alt="Financial Image" />
+          <img src={financial_} alt="Financial Image" />
         </div>
       </div>
     </div>

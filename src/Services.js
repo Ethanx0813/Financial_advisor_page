@@ -17,7 +17,7 @@ const Services = () => {
 
   const roles = ['Salaried,', 'A Businessperson,', 'Or a Freelancer'];
   const typingSpeed = 100;
-  const deletingSpeed = 50;
+  const deletingSpeed = 0;
   const holdDuration = 2000;
 
   useEffect(() => {
@@ -56,44 +56,51 @@ const Services = () => {
 
   const mainMessage =
     '90% of people who called agree that having someone to talk to about their financial plans has enhanced their financial journey.';
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      setLoader(true);
-    
-      try {
-        // Check if the selected date and time are available
-        const bookingsSnapshot = await db.collection("contacts")
-          .where("date", "==", date)
-          .where("time", "==", time)
-          .get();
-    
-        if (!bookingsSnapshot.empty) {
-          // Display message indicating that the selected time slot is already booked
-          alert("Sorry, the selected time slot is already booked. Please choose another time.");
-          setLoader(false);
-          return;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoader(true);
+
+    try {
+      const selectedDateTime = new Date(`${date}T${time}`);
+      const oneHourBefore = new Date(selectedDateTime.getTime() - 60 * 60 * 1000);
+      const oneHourAfter = new Date(selectedDateTime.getTime() + 60 * 60 * 1000);
+
+      const bookingsSnapshot = await db.collection("contacts")
+        .where("date", "==", date)
+        .get();
+
+      let conflict = false;
+      bookingsSnapshot.forEach(doc => {
+        const bookingTime = new Date(`${date}T${doc.data().time}`);
+        if (bookingTime >= oneHourBefore && bookingTime <= oneHourAfter) {
+          conflict = true;
         }
-    
-        // If the selected time slot is available, proceed with booking the call
-        await db.collection("contacts").add({
-          name: name,
-          email: email,
-          date: date,
-          time: time
-        });
+      });
+
+      if (conflict) {
+        alert("Sorry, the selected time slot is already booked or too close to another booking. Please choose another time.");
         setLoader(false);
-        alert("Your form has been submitted");
-        // Clear the form
-        setName("");
-        setEmail("");
-        setDate("");
-        setTime("");
-      } catch (error) {
-        alert(error.message);
-        setLoader(false);
+        return;
       }
-    };
-    
+
+      await db.collection("contacts").add({
+        name: name,
+        email: email,
+        date: date,
+        time: time
+      });
+      setLoader(false);
+      alert("Your form has been submitted");
+      setName("");
+      setEmail("");
+      setDate("");
+      setTime("");
+    } catch (error) {
+      alert(error.message);
+      setLoader(false);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -125,7 +132,7 @@ const Services = () => {
           Providing investment solutions whether<br></br> you are{' '}
           <span className="animated-text yellow">{renderCurrentRole()}</span>
         </h1>
-        <p style={{ fontSize: '20px' }}>Every unique financial problem can be solved by using simple investment solution.</p>
+        <p style={{ fontSize: '20px',marginLeft:'20px' }}>Every unique financial problem can be solved by using simple investment solution.</p>
         <div className="message-boxes">
           <div className="message-box">
             <h4><GreenLeafIcon />24 Hours</h4>

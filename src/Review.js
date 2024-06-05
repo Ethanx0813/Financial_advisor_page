@@ -15,7 +15,7 @@ const Review = () => {
         </div>
       </div>
       <div className="review">
-        <div className="stars">⭐⭐⭐⭐½</div>
+        <div className="stars">⭐⭐⭐⭐⭐</div>
         <div className="message">
           Disha from IMM has been my financial advisor for over 5 years and her services have been nothing less than phenomenal. Apart from informing me about new investment opportunities, she has been able to keep my portfolio steady consistently. What makes her the best is her absolute honesty and transparency. With her, I know my investments are in secure hands.
           <br />
@@ -25,7 +25,7 @@ const Review = () => {
         </div>
       </div>
       <div className="review">
-        <div className="stars">⭐⭐⭐⭐⭐</div>
+        <div className="stars">⭐⭐⭐⭐½</div>
         <div className="message">
           To secure your income and plan your future expenses better, Investing My Money can help you. I trust them and put aside a portion of my money for investments.
           <br />
