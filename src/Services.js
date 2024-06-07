@@ -3,6 +3,7 @@ import './Services.css';
 import GreenLeafIcon from './GreenLeafIcon';
 import GreenLeafIcon2 from './GreenLeafIcon2';
 import { db } from './firebase'; // Adjust the path based on the actual location of firebase.js
+import Modal from './Modal';
 
 const Services = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -14,6 +15,8 @@ const Services = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [loader, setLoader] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
 
   const roles = ['Salaried,', 'A Businessperson,', 'Or a Freelancer'];
   const typingSpeed = 100;
@@ -79,7 +82,8 @@ const Services = () => {
       });
 
       if (conflict) {
-        alert("Sorry, the selected time slot is already booked or too close to another booking. Please choose another time.");
+        setModalMessage("Sorry, the selected time slot is already booked or too close to another booking. Please choose another time.");
+        setShowModal(true);
         setLoader(false);
         return;
       }
@@ -91,13 +95,15 @@ const Services = () => {
         time: time
       });
       setLoader(false);
-      alert("Your form has been submitted");
+      setModalMessage("Your form has been submitted");
+      setShowModal(true);
       setName("");
       setEmail("");
       setDate("");
       setTime("");
     } catch (error) {
-      alert(error.message);
+      setModalMessage(error.message);
+      setShowModal(true);
       setLoader(false);
     }
   };
@@ -171,6 +177,7 @@ const Services = () => {
           </div>
         </div>
       </div>
+      <Modal show={showModal} message={modalMessage} onClose={() => setShowModal(false)} />
     </div>
   );
 };
