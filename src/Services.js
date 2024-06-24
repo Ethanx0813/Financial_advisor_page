@@ -12,6 +12,7 @@ const Services = () => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [loader, setLoader] = useState(false);
@@ -91,6 +92,7 @@ const Services = () => {
       await db.collection("contacts").add({
         name: name,
         email: email,
+        phoneNumber: phoneNumber,
         date: date,
         time: time
       });
@@ -99,6 +101,7 @@ const Services = () => {
       setShowModal(true);
       setName("");
       setEmail("");
+      setPhoneNumber("");
       setDate("");
       setTime("");
     } catch (error) {
@@ -112,6 +115,7 @@ const Services = () => {
     const { name, value } = e.target;
     if (name === 'name') setName(value);
     else if (name === 'email') setEmail(value);
+    else if (name === 'phoneNumber') setPhoneNumber(value);
   };
 
   const handleDateChange = (e) => {
@@ -163,6 +167,10 @@ const Services = () => {
               <div className="form-field">
                 <label htmlFor="email">Email:</label>
                 <input type="email" id="email" name="email" value={email} onChange={handleChange} required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" value={phoneNumber} onChange={handleChange} required />
               </div>
               <div className="form-field">
                 <label htmlFor="date">Date:</label>
