@@ -3,12 +3,12 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 // Initialize Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyBVdKcKGow_Vsu-z0GgMr8UHEFYii5NjN0",
-  authDomain: "new-contact-form-5fab4.firebaseapp.com",
-  projectId: "new-contact-form-5fab4",
-  storageBucket: "new-contact-form-5fab4.appspot.com",
-  messagingSenderId: "49611277574",
-  appId: "1:49611277574:web:e8ab847565a25d29c2ca87"
+  apiKey: "AIzaSyBS3Ot1YGQN3UKZZgH6ToOcgfoQeyNKX6Y",
+  authDomain: "ad-landing-22beb.firebaseapp.com",
+  projectId: "ad-landing-22beb",
+  storageBucket: "ad-landing-22beb.appspot.com",
+  messagingSenderId: "608187800001",
+  appId: "1:608187800001:web:484b3af283929a6920b740"
 }
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
