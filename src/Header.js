@@ -12,8 +12,8 @@ const Header = () => {
           <span className="header-title">Investing My Money</span>
         </div>
         <div className="header-contact">
-          <p>Contact: abcdefg@gmail.com</p>
-          <p>Phone: +1234567890</p>
+          <p>Contact: disha@investingmy.money</p>
+          
         </div>
       </div>
     </header>
