@@ -1,18 +1,15 @@
-// App.js
-
 import React from 'react';
 import Header from './Header';
 import Services from './Services';
-//import Review from './Review';
 import './App.css';
-import Advise from './Advise';
+// import Advise from './Advise';
 import Image from './Image';
 import Management from './Management';
-import ImageTableComponent from './ImageTableComponent';
+// import ImageTableComponent from './ImageTableComponent';
 import Footer from './Footer';
 import StepsComponent from './StepsComponent';
 import InvestmentAdvice from './InvestmentAdvice';
-//import MissionComponent from './MissionComponent';
+// import MissionComponent from './MissionComponent';
 import Review from './Review';
 import AboutComponent from './AboutComponent';
 import UnstoppableComponent from './UnstoppableComponent';
@@ -24,15 +21,15 @@ const App = () => {
       <Services />
       <StepsComponent />
       {/* <Advise/> */}
-      <InvestmentAdvice/>
-      <UnstoppableComponent/>
+      <InvestmentAdvice />
+      <UnstoppableComponent />
       <Image />
       {/* <MissionComponent/> */}
-      <Management/>
-      <Review/>
-      <AboutComponent/>
-      {/* <ImageTableComponent/>  */}
-      <Footer/>
+      <Management />
+      <Review />
+      <AboutComponent />
+      {/* <ImageTableComponent/> */}
+      <Footer />
     </div>
   );
 };

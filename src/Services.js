@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Services.css'; 
 import GreenLeafIcon from './GreenLeafIcon';
 import GreenLeafIcon2 from './GreenLeafIcon2';
-import { db } from './firebase'; // Adjust the path based on the actual location of firebase.js
+import { db } from './firebase';
 import Modal from './Modal';
 
 const Services = () => {
@@ -21,7 +21,7 @@ const Services = () => {
 
   const roles = ['Salaried,', 'A Businessperson,', 'Or a Freelancer'];
   const typingSpeed = 100;
-  const deletingSpeed = 0;
+  const deletingSpeed = 50; // Updated to be a bit slower than 0
   const holdDuration = 2000;
 
   useEffect(() => {
@@ -33,7 +33,6 @@ const Services = () => {
       } else {
         setIsDeleting(false);
         setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
-        setCurrentRoleCharIndex(0);
       }
     } else {
       if (currentRoleCharIndex < roles[currentRoleIndex].length) {
@@ -61,7 +60,7 @@ const Services = () => {
   const mainMessage =
     '90% of people who called agree that having someone to talk to about their financial plans has enhanced their financial journey.';
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     setLoader(true);
 
@@ -90,11 +89,11 @@ const Services = () => {
       }
 
       await db.collection("contacts").add({
-        name: name,
-        email: email,
-        phoneNumber: phoneNumber,
-        date: date,
-        time: time
+        name,
+        email,
+        phoneNumber,
+        date,
+        time
       });
       setLoader(false);
       setModalMessage("Your form has been submitted");
@@ -109,22 +108,22 @@ const Services = () => {
       setShowModal(true);
       setLoader(false);
     }
-  };
+  }, [name, email, phoneNumber, date, time]);
 
-  const handleChange = (e) => {
+  const handleChange = useCallback((e) => {
     const { name, value } = e.target;
     if (name === 'name') setName(value);
     else if (name === 'email') setEmail(value);
     else if (name === 'phoneNumber') setPhoneNumber(value);
-  };
+  }, []);
 
-  const handleDateChange = (e) => {
+  const handleDateChange = useCallback((e) => {
     setDate(e.target.value);
-  };
+  }, []);
 
-  const handleTimeChange = (e) => {
+  const handleTimeChange = useCallback((e) => {
     setTime(e.target.value);
-  };
+  }, []);
 
   const renderCurrentRole = () => {
     const currentRole = roles[currentRoleIndex];

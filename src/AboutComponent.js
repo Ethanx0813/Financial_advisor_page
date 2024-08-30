@@ -13,7 +13,7 @@ const AboutComponent = () => {
       </div>
       <div className="about-right">
         <div className="about-image-container">
-          <img src={financial_} alt="Financial Image" />
+          <img src={financial_} alt="Investment related" />
         </div>
       </div>
     </div>
