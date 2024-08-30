@@ -24,6 +24,8 @@ const Services = () => {
   const deletingSpeed = 50; // Updated to be a bit slower than 0
   const holdDuration = 2000;
 
+  const mainMessage = '90% of people who called agree that having someone to talk to about their financial plans has enhanced their financial journey.';
+
   useEffect(() => {
     if (isDeleting) {
       if (currentRoleCharIndex > 0) {
@@ -45,7 +47,7 @@ const Services = () => {
         }, holdDuration);
       }
     }
-  }, [currentRoleCharIndex, isDeleting]);
+  }, [currentRoleCharIndex, isDeleting, currentRoleIndex, roles]);
 
   useEffect(() => {
     const messageInterval = setInterval(() => {
@@ -55,10 +57,7 @@ const Services = () => {
     return () => {
       clearInterval(messageInterval);
     };
-  }, []);
-
-  const mainMessage =
-    '90% of people who called agree that having someone to talk to about their financial plans has enhanced their financial journey.';
+  }, [mainMessage.length]);
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
@@ -141,7 +140,7 @@ const Services = () => {
           Providing investment solutions whether<br></br> you are{' '}
           <span className="animated-text yellow">{renderCurrentRole()}</span>
         </h1>
-        <p style={{ fontSize: '20px',marginLeft:'20px' }}>Every unique financial problem can be solved by using simple investment solution.</p>
+        <p style={{ fontSize: '20px', marginLeft: '20px' }}>Every unique financial problem can be solved by using simple investment solution.</p>
         <div className="message-boxes">
           <div className="message-box">
             <h4><GreenLeafIcon />24 Hours</h4>

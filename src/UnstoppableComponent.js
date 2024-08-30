@@ -10,19 +10,19 @@ const UnstoppableComponent = () => {
       <h1 className="heading">Take Control of Your Money</h1>
       <div className="images-container">
         <figure className="snip1113 red">
-          <img src={imag2} alt="Financial Image" />
+          <img src={imag2} alt="Understand Money Self" />
           <figcaption>
             <h4>Understand your <span>Money self</span></h4>
           </figcaption>
         </figure>
         <figure className="snip1113 blue">
-          <img src={imag1} alt="Financial Image" />
+          <img src={imag1} alt="Get Financial Clarity" />
           <figcaption>
             <h4>Get financial clarity <span></span></h4>
           </figcaption>
         </figure>
         <figure className="snip1113">
-          <img src={imag3} alt="Financial Image" />
+          <img src={imag3} alt="Live the Life You Want" />
           <figcaption>
             <h3>Live the life you want<span></span></h3>
           </figcaption>

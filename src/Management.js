@@ -17,7 +17,8 @@ const Management = () => {
       </div>
       <div className="management-right">
         <div className="image-container">
-          <img src={img6} alt="Financial Image" className="financial-image" />
+        <img src={img6} alt="" className="financial-image" />
+
         </div>
       </div>
     </div>
